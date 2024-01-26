@@ -100,5 +100,3 @@ document.querySelectorAll("i").forEach(el => {
     ],
   ];
   /* UTILS END */
-
-export utils;
