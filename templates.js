@@ -117,5 +117,3 @@ Lorem
 
 ];
   /* TEMPLATES END */
-
-export templates;
