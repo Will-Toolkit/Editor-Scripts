@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Source Code Tools
 // @namespace    https://toolkitwebsites.co.uk
-// @version      0.5
-// @updateURL    
-// @downloadURL  
+// @version      0.6
+// @updateURL    https://github.com/Will-Toolkit/Editor-Scripts/raw/main/source-code-tools.js
+// @downloadURL  https://github.com/Will-Toolkit/Editor-Scripts/raw/main/source-code-tools.js
 // @description  Adds some extra functionality to the Source Code editor.
 // @author       Will Thrussell
 // @match        https://www.toolkit.uk/pages/source/*
