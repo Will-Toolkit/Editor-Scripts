@@ -79,14 +79,14 @@ Lorem
     <h4>
       Question
     </h4>
-    <i class="fa-solid fa-chevron-down">
+    <i aria-hidden="true" class="fa-solid fa-chevron-down">
     </i>
   </div>
   <div class="minimize xs-middle">
     <h4>
       Question
     </h4>
-    <i class="fa-solid fa-chevron-up">
+    <i aria-hidden="true" class="fa-solid fa-chevron-up">
     </i>
   </div>
   <div class="expand-content">
