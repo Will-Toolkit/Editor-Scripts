@@ -1,14 +1,13 @@
 // ==UserScript==
 // @name         Source Code Tools
 // @namespace    https://toolkitwebsites.co.uk
-// @version      0.7
+// @version      0.8
 // @updateURL    https://github.com/Will-Toolkit/Editor-Scripts/raw/main/source-code-tools.js
 // @downloadURL  https://github.com/Will-Toolkit/Editor-Scripts/raw/main/source-code-tools.js
 // @description  Adds some extra functionality to the Source Code editor.
 // @author       Will Thrussell
 // @match        https://www.toolkit.uk/pages/source/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=toolkitoffice.co.uk
-// @require      https://greasyfork.org/scripts/470000/code/GM%20Requests.js
 // @require      https://github.com/Will-Toolkit/Editor-Scripts/raw/main/utils.js
 // @require      https://github.com/Will-Toolkit/Editor-Scripts/raw/main/templates.js
 // @grant        GM_addStyle
@@ -16,8 +15,6 @@
 
 (function () {
   "use strict";
-
-    /* SOURCE UTILS & TEMPLATES */
 
   /* CODE MIRROR CHANGES */
   let cm = document.querySelector(".CodeMirror")?.CodeMirror;
