@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Source Code Tools
 // @namespace    https://toolkitwebsites.co.uk
-// @version      0.6
+// @version      0.7
 // @updateURL    https://github.com/Will-Toolkit/Editor-Scripts/raw/main/source-code-tools.js
 // @downloadURL  https://github.com/Will-Toolkit/Editor-Scripts/raw/main/source-code-tools.js
 // @description  Adds some extra functionality to the Source Code editor.
@@ -22,6 +22,7 @@
   /* CODE MIRROR CHANGES */
   let cm = document.querySelector(".CodeMirror")?.CodeMirror;
   window.addEventListener("load", () => {
+    scrubSpaces();
     addPagesButton();
     addToolbar();
   });
@@ -31,6 +32,24 @@
         let parentElement = document.querySelector(".bootstrapeditor-el.bootstrapeditor-save-and-cancel-buttons");
         addButton('Scrub', scrubSpaces, parentElement);
     });*/
+
+  function cmReplace(filter, replaceStr) {
+    const returnCursor = cm.doc.getCursor();
+    cm.execCommand("selectAll");
+    cm.doc.replaceSelection(cm.doc.getSelection().replace(filter, replaceStr));
+    cm.doc.setCursor(returnCursor);
+  }
+
+  // Edits the DOM through CodeMirror to remove trailing spaces via Regex filters.
+  function scrubSpaces() {
+    // console.log("Scrubbing!");
+
+    // Scrubs spaces
+    cmReplace(/( )+(?=(\\n|$))/gm, '');
+
+    // Turns thumbnail images into hires images
+    cmReplace(/(\/143x93\/)/gm, '/hires/');
+  }
 
   function addButton(text, action, parentElement) {
     let newButton = document.createElement("a");
