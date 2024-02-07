@@ -33,7 +33,7 @@ const images = document.querySelectorAll('img');
 images.forEach(image => {
   const alias = image.getAttribute('data-src').split('/').at(-1).split('.')[0];
   const alt = alias.split('-').join(' ').toLowerCase();
-  image.setAttribute('alt', `${alt}`);
+  image.setAttribute('alt', alt);
 });
 `
     ],
