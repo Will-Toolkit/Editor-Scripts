@@ -26,6 +26,18 @@ lazyImgs.forEach(lazyImg => {
 });`,
     ],
     [
+      "Image alts",
+      "Adds an \"alt\" tag to images. The text is based on the file name", 
+      `
+const images = document.querySelectorAll('img');
+images.forEach(image => {
+  const alias = image.getAttribute('data-src').split('/').at(-1).split('.')[0];
+  const alt = alias.split('-').join(' ').toLowerCase();
+  image.setAttribute('alt', `${alt}`);
+});
+`
+    ],
+    [
       "Fancy href",
       "Makes the href of fancyboxes 'javascript:;'",
       `
