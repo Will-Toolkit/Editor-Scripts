@@ -31,7 +31,7 @@ lazyImgs.forEach(lazyImg => {
       `
 const images = document.querySelectorAll('img');
 images.forEach(image => {
-  let source = image.getAttribute('src') || image.getAttribute('data-src') || '';
+  let source = image.getAttribute('data-src') || image.getAttribute('src') || '';
   const alias = source.split('/').at(-1).split('.')[0];
   const alt = alias.split('-').join(' ').toLowerCase();
   image.setAttribute('alt', alt);
