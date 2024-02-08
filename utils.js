@@ -34,7 +34,7 @@ images.forEach(image => {
   let source = image.getAttribute('data-src') || image.getAttribute('src') || '';
   const alias = source.split('/').at(-1).split('.')[0];
   const alt = alias.toLowerCase().split('-');
-  alt[0] = alt[0].toUpperCase();
+  alt[0] = alt[0][0].toUpperCase() + alt[0].slice(1);
   altText = alt.join(' ');
   image.setAttribute('alt', altText);
 });
