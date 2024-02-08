@@ -33,8 +33,10 @@ const images = document.querySelectorAll('img');
 images.forEach(image => {
   let source = image.getAttribute('data-src') || image.getAttribute('src') || '';
   const alias = source.split('/').at(-1).split('.')[0];
-  const alt = alias.split('-').join(' ').toLowerCase();
-  image.setAttribute('alt', alt);
+  const alt = alias.toLowerCase().split('-');
+  alt[0] = alt[0].toUpperCase();
+  altText = alt.join(' ');
+  image.setAttribute('alt', altText);
 });
 `
     ],
