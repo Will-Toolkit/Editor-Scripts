@@ -108,7 +108,7 @@ coverImgs.forEach(coverImg => {
       "Aria-hidden icons",
       "Applies aria-hidden='true' to all <i> tags.",
       `
-document.querySelectorAll("i").forEach(el => {
+document.querySelectorAll("i[class^='fa-'], i[class*=' fa-']").forEach(el => {
   el.setAttribute("aria-hidden", "true");
 });
             `,
