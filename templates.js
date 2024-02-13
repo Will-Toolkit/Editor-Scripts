@@ -111,6 +111,23 @@ Lorem
     [
         "Widget",
         `<tw_widget wid="XXX"></tw_widget>`
+    ],
+    [
+        "Table",
+        `<div style="overflow-x: auto;">
+  <table>
+    <thead>
+      <tr>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>`
     ]
 
 
