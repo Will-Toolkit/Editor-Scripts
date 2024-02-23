@@ -69,7 +69,7 @@ const fancyboxes = document.querySelectorAll("a[data-fancybox]").forEach(el => {
 const imgs = document.querySelectorAll("img");
 imgs.forEach(img => {
   if (img.src) {
-    img.src = img.src.replace(/(?<=\/siteimages\/)([^/]+)/g, "hires");
+    img.src = img.src.replace(/(?<=\\/siteimages\\/)([^/]+)/g, "hires");
   }
 
   if (img.dataset.src) {
