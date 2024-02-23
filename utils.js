@@ -73,7 +73,7 @@ imgs.forEach(img => {
   }
 
   if (img.dataset.src) {
-    img.dataset.src = img.dataset.src.replace(/(?<=\/siteimages\/)([^/]+)/g, "hires");
+    img.dataset.src = img.dataset.src.replace(/(?<=\\/siteimages\\/)([^/]+)/g, "hires");
   }
 });`,
     ],
