@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Source Code Tools
 // @namespace    https://toolkitwebsites.co.uk
-// @version      0.10
+// @version      0.11
 // @updateURL    https://github.com/Will-Toolkit/Editor-Scripts/raw/main/source-code-tools.js
 // @downloadURL  https://github.com/Will-Toolkit/Editor-Scripts/raw/main/source-code-tools.js
 // @description  Adds some extra functionality to the Source Code editor.
@@ -9,8 +9,8 @@
 // @match        https://www.toolkit.uk/pages/source/*
 // @match        https://www.toolkit.uk/blog/source/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=toolkitoffice.co.uk
-// @require      https://github.com/Will-Toolkit/Editor-Scripts/raw/main/utils.js
-// @require      https://github.com/Will-Toolkit/Editor-Scripts/raw/main/templates.js
+// @require      https://github.com/Will-Toolkit/Editor-Scripts/raw/main/utils.js?asdfg
+// @require      https://github.com/Will-Toolkit/Editor-Scripts/raw/main/templates.js?asdf
 // @grant        GM_addStyle
 // ==/UserScript==
 
@@ -27,30 +27,7 @@
         addRedesignLink();
     });
 
-    document.addEventListener('keydown', function(event) {
-        if (event.ctrlKey && event.key === 'b') {
-            boldSelection();
-        }
-        else if (event.ctrlKey && event.key === 'i') {
-            italiciseSelection();
-        }
-    });
 
-    function boldSelection() {
-        const newSelect = cm.getSelections();
-        for (let i = 0; i < newSelect.length; i++) {
-            newSelect[i] = `<b>${newSelect[i]}</b>`;
-        }
-        cm.replaceSelections(newSelect);
-    }
-
-    function italiciseSelection() {
-        const newSelect = cm.getSelections();
-        for (let i = 0; i < newSelect.length; i++) {
-            newSelect[i] = `<em>${newSelect[i]}</em>`;
-        }
-        cm.replaceSelections(newSelect);
-    }
     // On load, adds button to editor - not necessary
     /*
     window.addEventListener('load', () => {
@@ -377,7 +354,6 @@
             }
         }
     }
-
 
 
     GM_addStyle(
