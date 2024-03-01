@@ -1,6 +1,19 @@
   /* UTILS START */
   const utils = [
     [
+      "Cleanup",
+      "Removes fadeIn classes and extra spaces from element classes.",
+      `document.querySelectorAll('*').forEach(elem => {
+  const classes = elem.getAttribute("class");
+  if (classes) {
+    
+    elem.classList.remove('fadeInDone', 'childFadeInDone', 'visible');
+    if (elem.classList.length === 0) {
+      elem.removeAttribute("class");
+    }
+  }
+});`
+    ],
       "+ Lazy",
       "Adds 'lazy' class to all images, and changes src to data-src.",
       `const images = document.querySelectorAll('.row:not(:first-child) img');
