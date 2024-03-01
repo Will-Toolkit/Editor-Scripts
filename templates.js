@@ -134,7 +134,7 @@ Lorem
     `<a data-fancybox data-src="#example" data-options='{"touch" : false}' href="javascript:;">
   Fancybox Button
 </a>
-    <div class="html-popup" id="example"> 
+<div class="html-popup" id="example"> 
   <h2>Hello</h2>
   <p>Lorem Ipsum</p>
 </div>
@@ -142,8 +142,9 @@ Lorem
   ],
   [
     "Fancybox Form popup",
-    `<a class="form-popup" data-fancybox="" data-type="iframe" href="javascript:;" data-src="form url /plain">
-Text Here
+    `
+<a class="form-popup" data-fancybox="" data-type="iframe" href="javascript:;" data-src="form url /plain">
+  Text Here
 </a>`
   ]
 
