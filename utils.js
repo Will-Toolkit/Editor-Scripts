@@ -14,6 +14,7 @@
   }
 });`
     ],
+    [
       "+ Lazy",
       "Adds 'lazy' class to all images, and changes src to data-src.",
       `const images = document.querySelectorAll('.row:not(:first-child) img');
