@@ -5,7 +5,7 @@
       "Removes fadeIn classes and extra spaces from element classes.",
       `document.querySelectorAll('*').forEach(elem => {
   const classes = elem.getAttribute("class");
-  if (classes) {
+  if (classes != null) {
     
     elem.classList.remove('fadeInDone', 'childFadeInDone', 'visible');
     if (elem.classList.length === 0) {
