@@ -12,6 +12,10 @@
       elem.removeAttribute("class");
     }
   }
+  const style = elem.getAttribute("style");
+  if ((style != null) && (style.length === 0)) {
+    elem.removeAttribute("style");
+  }
 });`
     ],
     [
