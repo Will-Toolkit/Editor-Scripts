@@ -41,6 +41,10 @@ Lorem
 </a>`
     ],
     [
+        "Img",
+        `<img src=" " style="width: 100%;">`
+    ],
+    [
         "½ panel left",
         `<div class="row">
   <div class="panel-inner equal-height">
