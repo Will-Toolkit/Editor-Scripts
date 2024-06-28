@@ -61,6 +61,25 @@ images.forEach(image => {
 `
     ],
     [
+      "Refresh files",
+      "Refreshes the images",
+      `// Generate a random number between 0 and 0xFFFFFF (16777215)
+let randomNum = Math.floor(Math.random() * 16777215);
+    
+// Convert the number to a hexadecimal string and pad with leading zeros if necessary
+let hexCode = randomNum.toString(16).padStart(6, '0');
+
+const newQuery = `?` + hexCode;
+
+for (el of document.body.children) {
+    const oldString = el.outerHTML;
+
+    const regex = /(?<=(?:toolkitfiles.*))(?<=\.(?:jpg|jpeg|png|mp4|webm|webp|pdf|gif|txt|docx))\?[^)"\s]+/g;
+
+    el.outerHTML = el.outerHTML.replaceAll(regex, newQuery);
+}`
+    ],
+    [
       "Fancy href",
       "Makes the href of fancyboxes 'javascript:;'",
       `
