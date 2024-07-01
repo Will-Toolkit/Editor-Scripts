@@ -74,7 +74,7 @@ const newQuery = `?` + hexCode;
 for (el of document.body.children) {
     const oldString = el.outerHTML;
 
-    const regex = /(?<=(?:toolkitfiles.*))(?<=\.(?:jpg|jpeg|png|mp4|webm|webp|pdf|gif|txt|docx))\?[^)"\s]+/g;
+    const regex = /(?<=(?:toolkitfiles.*))(?<=\\.(?:jpg|jpeg|png|mp4|webm|webp|pdf|gif|txt|docx))\\?[^)"\\s]+/g;
 
     el.outerHTML = el.outerHTML.replaceAll(regex, newQuery);
 }`
