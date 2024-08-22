@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Source Code Tools
 // @namespace    https://toolkitwebsites.co.uk
-// @version      0.11
+// @version      0.12
 // @updateURL    https://github.com/Will-Toolkit/Editor-Scripts/raw/main/source-code-tools.js
 // @downloadURL  https://github.com/Will-Toolkit/Editor-Scripts/raw/main/source-code-tools.js
 // @description  Adds some extra functionality to the Source Code editor.
@@ -9,8 +9,8 @@
 // @match        https://www.toolkit.uk/pages/source/*
 // @match        https://www.toolkit.uk/blog/source/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=toolkitoffice.co.uk
-// @require      https://github.com/Will-Toolkit/Editor-Scripts/raw/main/utils.js?asdfg
-// @require      https://github.com/Will-Toolkit/Editor-Scripts/raw/main/templates.js?asdf
+// @require      https://github.com/Will-Toolkit/Editor-Scripts/raw/main/utils.js?g
+// @require      https://github.com/Will-Toolkit/Editor-Scripts/raw/main/templates.js?g
 // @grant        GM_addStyle
 // ==/UserScript==
 
@@ -22,6 +22,7 @@
     window.addEventListener("load", () => {
         scrubSpaces();
         addPagesButton();
+        addExtensionDiv();
         addUtilityList();
         addToolbar();
         addRedesignLink();
@@ -67,6 +68,16 @@
         return newButton;
     }
 
+    function addExtensionDiv() {
+        const extensionDiv = `<div id="TK-extras"></div>`;
+
+        const parent = document.querySelector(
+            ".bootstrapeditor-el.bootstrapeditor-save-and-cancel-buttons"
+        );
+
+        parent.insertAdjacentHTML("afterbegin", extensionDiv);
+    }
+
     // Changes the "Toolkit" logo to link to the pages module on the client's Toolkit.
     function addPagesButton() {
         const parent = document.querySelector(
@@ -80,7 +91,7 @@
 
     function addToolbar() {
         const parent = document.querySelector(
-            ".bootstrapeditor-el.bootstrapeditor-save-and-cancel-buttons"
+            "#TK-extras"
         );
         let toolbar = document.createElement("span");
         toolbar.setAttribute("id", "expandToolbar");
@@ -93,7 +104,7 @@
 
     function addExpandButton() {
         const parent = document.querySelector(
-            ".bootstrapeditor-el.bootstrapeditor-save-and-cancel-buttons"
+            "#TK-extras"
         );
         const toolbar = document.querySelector("#expandToolbar");
         const newButton = document.createElement("a");
@@ -175,7 +186,7 @@
   }
 
     function addUtilityList() {
-        let parent = document.querySelector(".bootstrapeditor-el.bootstrapeditor-save-and-cancel-buttons");
+        let parent = document.querySelector("#TK-extras");
         const utilityButton = addButton("Utils", toggleUtils, parent);
 
         // Adds Utility buttons
@@ -356,8 +367,14 @@
     }
 
 
+
     GM_addStyle(
         `
+#TK-extras {
+  display: inline-block;
+  margin-right: 15px;
+  flex-direction: row-reverse;
+}
 #expandToolbar {
   display: none;
   margin-right: 15px;
