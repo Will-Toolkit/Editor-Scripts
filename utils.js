@@ -67,7 +67,7 @@ images.forEach(image => {
 let randomNum = Math.floor(Math.random() * 16777215);
 let hexCode = randomNum.toString(16).padStart(6, '0');
 
-const newQuery = `?` + hexCode;
+const newQuery = \`?\` + hexCode;
 
 for (el of document.body.children) {
     let newString = el.outerHTML;
