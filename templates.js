@@ -77,6 +77,22 @@ Lorem
 </div>`
     ],
     [
+        "Accordion",
+        `<div class="accordion-wrapper">
+  <div class="accordion-btn">
+    Open
+  </div>
+  <div class="accordion-minimize">
+    Close
+  </div>
+  <div class="accordion-content-wrapper">
+    <div class="accordion-content">
+      Content
+    </div>
+  </div>
+</div>`
+    ],
+    [
         "Expanding Container",
         `<div class="expand-container">
   <div class="expand-btn xs-middle">
