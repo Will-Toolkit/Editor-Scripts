@@ -81,9 +81,11 @@ Lorem
         `<div class="accordion-wrapper">
   <div class="accordion-btn">
     Open
+    <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
   </div>
   <div class="accordion-minimize">
     Close
+    <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
   </div>
   <div class="accordion-content-wrapper">
     <div class="accordion-content">
